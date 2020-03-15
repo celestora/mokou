@@ -67,7 +67,7 @@ trait EntityRelations {
      */
     protected function belongsToMany(string $model, ?string $intermideate = NULL, ?string $foreignPivotKey = NULL, ?string $relatedPivotKey = NULL)
     {
-		$this->throwOnUnpresisted();
+        $this->throwOnUnpresisted();
 		
         if(is_null($intermideate) || is_null($foreignPivotKey) || is_null($relatedPivotKey)) {
             $thisModelName = strtolower((new \ReflectionClass($this))->getShortName());
@@ -91,7 +91,7 @@ trait EntityRelations {
      */
     protected function belongsTo(string $model, ?string $foreign_key = NULL, ?string $local_key = NULL)
     {
-		$this->throwOnUnpresisted();
+        $this->throwOnUnpresisted();
 		
         $foreign_key = $foreign_key
                        ?? (new $model)->getPrimaryKeyName();
