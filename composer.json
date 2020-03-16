@@ -1,6 +1,7 @@
 {
 	"keywords" : [
-		"laravel"
+		"laravel",
+		"active record"
 	],
 	"autoload" : {
 		"psr-4" : {
@@ -18,10 +19,39 @@
 		"php" : ">=7.3",
 		"nette/database" : "~3",
 		"fightbulc/moment" : "~1.32",
-		"illuminate/support" : "7.1.2"
+		"illuminate/support" : "7.1.2",
+		"nette/php-generator" : "~3.3",
+		"symfony/console" : "~5"
 	},
 	"minimum-stability" : "RC",
 	"require-dev" : {
 		"peridot-php/peridot" : "~1.19"
-	}
+	},
+	"config" : {
+		"bin-dir" : "cli/bin"
+	},
+	"repositories" : [{
+			"type" : "git",
+			"url" : "https://github.com/fkwa/mokou.git",
+			"name" : "GitHub"
+		}, {
+			"type" : "composer",
+			"url" : "https://packagist.org/packages/mokou/mokou",
+			"name" : "Packagist"
+		}
+	],
+	"support" : {
+		"source" : "https://github.com/fkwa/mokou",
+		"issues" : "https://github.com/fkwa/mokou/issues",
+		"wiki" : "http://fkwa.github.io/mokou",
+		"email" : "mokou-issues@vriska.ru"
+	},
+	"authors" : [{
+			"name" : "fkwa",
+			"email" : "celestine@vriska.ru",
+			"homepage" : "http://vriska.ru/",
+			"role" : "Developer"
+		}
+	],
+	"homepage" : "http://fkwa.github.io/mokou"
 }
