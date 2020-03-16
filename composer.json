@@ -18,8 +18,7 @@
 		"php" : ">=7.3",
 		"nette/database" : "~3",
 		"fightbulc/moment" : "~1.32",
-		"illuminate/support" : "7.1.2",
-		"illuminate/contracts" : "7.1.2"
+		"illuminate/support" : "7.1.2"
 	},
 	"minimum-stability" : "RC",
 	"require-dev" : {
