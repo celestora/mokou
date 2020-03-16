@@ -226,7 +226,7 @@ trait Entity {
         
         $accessor = $this->getMutatorMethod($attribute, true);
         if(!is_null($accessor))
-            $data = $this->{$accessor}($data);
+            $data = $this->{$accessor}();
         
         settype($data, $this->casts[$attribute] ?? gettype($data));
         return $data;
@@ -246,8 +246,10 @@ trait Entity {
         settype($newValue, $this->casts[$attribute] ?? gettype($newValue));
         
         $mutator = $this->getMutatorMethod($attribute);
-        if(!is_null($mutator))
-            $newValue = $this->{$mutator}($newValue);
+        if(!is_null($mutator)) {
+            $this->{$mutator}($newValue);
+            return;
+        }
         
         $this->stateChanges($attribute, $newValue);
     }

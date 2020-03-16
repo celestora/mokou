@@ -16,9 +16,9 @@ Example usage
     {
         protected $table = "people";
         
-        function getFirstNameAttribute(string $fName): string
+        function getFirstNameAttribute(): string
         {
-            return ucfirst($person->first_name);
+            return ucfirst($this->attributes["first_name"]);
         }
     }
     
