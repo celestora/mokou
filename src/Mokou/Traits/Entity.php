@@ -7,7 +7,9 @@ use Nette\Database\Table\{ActiveRow, Selection};
 use Moment\Moment;
 
 /**
- * Entity trait. Represents the entity part of ActiveRecord model.s
+ * Entity trait. Represents the entity part of ActiveRecord models.
+ * 
+ * @property-read array attribute
  */
 trait Entity {
     /**
@@ -207,6 +209,9 @@ trait Entity {
     {
         if(is_null($this->row) && is_null($this->changes[$attribute]))
             throw new ISE("Can't get attribute of unpresisted model.");
+        
+        if($attribute === "attributes")
+            return (array) $this->row;
         
 		$relatedModel = $this->tryResolveRelationship($attribute, $resolved);
         if($resolved) {
